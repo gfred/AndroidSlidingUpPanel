@@ -211,7 +211,7 @@ public class SlidingUpPanelLayout extends ViewGroup {
     private float mInitialMotionY;
     private boolean mIsScrollableViewHandlingTouch = false;
 
-    private List<PanelSlideListener> mPanelSlideListeners = new ArrayList<>();
+    private List<PanelSlideListener> mPanelSlideListeners = Collections.synchronizedList(new ArrayList<PanelSlideListener>());
     private View.OnClickListener mFadeOnClickListener;
 
     private final ViewDragHelper mDragHelper;
